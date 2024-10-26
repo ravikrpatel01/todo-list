@@ -22,8 +22,6 @@ const Task = () => {
     })();
   }, []);
 
-  
-
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -35,7 +33,7 @@ const Task = () => {
     const newTask = {
       id: Date.now(),
       title: taskInput,
-      date:dateInput,
+      date: dateInput,
       completed: false,
     };
 
@@ -53,37 +51,59 @@ const Task = () => {
   };
 
   return (
-    <div className="w-[75%] mt-5 h-auto p-10 flex flex-col justify-center items-center">
-      <div className="bg-gray-200 py-6 px-10 w-full h-auto rounded">
-        <h2 className="mb-3 text-gray-600 text-2xl font-bold">
-          To-Do List Project📝
-        </h2>
+    <div
+      id="main-div"
+      className="w-[75%] mt-5 h-auto p-10 flex flex-col justify-center items-center"
+    >
+      <div id="div-2" className="bg-gray-200 py-6 px-10 w-full h-auto rounded">
+        <div id="heading">
+          <h2 className="mb-3 text-gray-600 text-2xl font-bold">
+            To-Do List Project📝
+          </h2>
+        </div>
+
         <div>
           <form
             onSubmit={(e) => submitHandler(e)}
-            className="flex justify-between w-full"
+            className="flex flex-col justify-between w-full"
             action=""
           >
-            <input
-              className="text-[1rem] w-[60%] px-3 py-1 border-gray-400 focus:border-gray-500 border-[1px] outline-none text-black rounded"
-              placeholder="Enter your task"
-              type="text"
-              value={taskInput}
-              onChange={(e) => setTaskInput(e.target.value)}
-            />
-            <input
-              className="text-[1rem] px-3 py-1 cursor-pointer border-gray-400 focus:border-gray-500 border-[1px] outline-none text-black rounded"
-              type="date"
-              value={dateInput}
-              // defaultValue={Date}
-              onChange={(e)=>setDateInput(e.target.value)}
-            />
-            <button className="text-[0.8rem] w-[20%] px-5 py-1 bg-emerald-800 rounded hover:bg-emerald-700 transition-all">
-              ADD TASK
-            </button>
+            <div id="input-button" className="flex justify-between">
+              <input
+                id="task-input"
+                className="text-[1rem] w-[88%] px-3 py-1 border-gray-400 focus:border-gray-500 border-[1px] outline-none text-black rounded"
+                placeholder="Enter your task"
+                type="text"
+                value={taskInput}
+                onChange={(e) => setTaskInput(e.target.value)}
+              />
+
+              <button
+                id="btn"
+                className="text-[0.8rem] w-[10%] px-5 py-1 bg-emerald-800 rounded hover:bg-emerald-700 transition-all"
+              >
+                ADD TASK
+              </button>
+            </div>
+
+            <div className="mt-4 flex items-center">
+              <h3 className="text-gray-700 font-semibold text-lg">
+                Choose Date:{" "}
+              </h3>
+              <input
+                className="text-[1rem] ms-3 px-3 py-1 cursor-pointer border-gray-400 focus:border-gray-500 border-[1px] outline-none text-black rounded"
+                type="date"
+                value={dateInput}
+                // defaultValue={Date}
+                onChange={(e) => setDateInput(e.target.value)}
+              />
+            </div>
           </form>
         </div>
-        <TaskList tasks={tasks} methods={{getLocalStorageData, setLocalStorageData}}/>
+        <TaskList
+          tasks={tasks}
+          methods={{ getLocalStorageData, setLocalStorageData }}
+        />
       </div>
     </div>
   );

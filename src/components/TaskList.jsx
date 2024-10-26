@@ -42,7 +42,7 @@ const TaskList = ({ tasks, methods }) => {
                         {task.date}
                       </h3>
                     </div>
-                    <div className="flex items-center">
+                    <div id="completed" className="flex items-center">
                       <input
                         type="checkbox"
                         onClick={() => toggleCompleted(task.id)}
