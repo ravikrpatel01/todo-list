@@ -1,15 +1,12 @@
 {
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
+    "build": {
+      "env": {
+        "NODE_ENV": "production"
       }
-    }
-  ],
-  "framework": "vite",
-  "env": {
-    "NODE_ENV": "production"
+    },
+    "installCommand": "bun install",
+    "buildCommand": "bun run build",
+    "outputDirectory": "dist",
+    "nodeVersion": "20.x"
   }
-}
+  
