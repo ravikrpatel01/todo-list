@@ -53,12 +53,12 @@ const Task = () => {
   return (
     <div
       id="main-div"
-      className="w-[75%] mt-5 h-auto p-10 flex flex-col justify-center items-center"
+      className="w-[75%] mt-1 h-auto p-10 flex flex-col justify-center items-center"
     >
       <div id="div-2" className="bg-gray-200 py-6 px-10 w-full h-auto rounded">
         <div id="heading">
           <h2 className="mb-3 text-gray-600 text-2xl font-bold">
-            To-Do List Project📝
+            To-Do List 📝
           </h2>
         </div>
 
@@ -71,7 +71,7 @@ const Task = () => {
             <div id="input-button" className="flex justify-between">
               <input
                 id="task-input"
-                className="text-[1rem] w-[88%] px-3 py-1 border-gray-400 focus:border-gray-500 border-[1px] outline-none text-black rounded"
+                className="text-[1rem] w-[85%] px-3 py-1 border-gray-400 focus:border-gray-500 border-[1px] outline-none text-black rounded"
                 placeholder="Enter your task"
                 type="text"
                 value={taskInput}
@@ -80,7 +80,7 @@ const Task = () => {
 
               <button
                 id="btn"
-                className="text-[0.8rem] w-[10%] px-5 py-1 bg-emerald-800 rounded hover:bg-emerald-700 transition-all"
+                className="text-[0.8rem] w-[12%] px-5 py-1 bg-emerald-800 rounded hover:bg-emerald-700 transition-all"
               >
                 ADD TASK
               </button>
