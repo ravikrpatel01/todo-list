@@ -39,7 +39,7 @@ const TaskList = ({ tasks, methods }) => {
                     </div>
                     <div>
                       <h3 className="bg-yellow-100 px-2 py-0.5 rounded-md text-red-900 font-semibold">
-                        {task.date}
+                      {new Date(task.date).toISOString().split("T")[0].split("-").reverse().join("-")}
                       </h3>
                     </div>
                     <div id="completed" className="flex items-center">
